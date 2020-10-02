@@ -1,24 +1,34 @@
-import { IsNotEmpty } from 'class-validator'
+import { 
+  IsString, 
+  IsBoolean,
+  IsArray,
+  IsIn,
+} from 'class-validator'
 export class BlogDTO{
-  @IsNotEmpty()
+  @IsString()
   title: string
 
-  @IsNotEmpty()
+  @IsString()
   content:string
 
   // 内容类型，分为 html (富文本)和 markdown
-  @IsNotEmpty()
+  @IsString()
+  @IsIn(['html', 'markdown'])
   contentType: 'html' | 'markdown'
 
   // 文章类型：博客（blog），草稿（draft），页面（page）
-  @IsNotEmpty()
+  @IsString()
+  @IsIn(['blog', 'draft', 'page'])
   articleType: 'blog' | 'draft' | 'page'
 
-  @IsNotEmpty()
+  @IsBoolean()
   visible: boolean
 
   // 自定义id
   _id: string
 
   category: string
+
+  @IsArray()
+  tags: string[]
 }
