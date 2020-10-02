@@ -42,7 +42,17 @@ export class BlogService {
     if(!blog.length) {
       throw new RecordNotExistException();
     }
+    this.addPageView(id);
     return blog[0];
+  }
+
+  async addPageView(id: string) {
+    const _ = this.db.command;
+    const { updated } = await this.collection.doc(id).update({
+      pageView: _.inc(1)
+    });
+
+    return { updated };
   }
 
   async addOne(blog: BlogDTO) {

@@ -24,6 +24,9 @@ export class BlogDTO{
   @IsBoolean()
   visible: boolean
 
+  @IsBoolean()
+  enableComment: boolean
+
   // 自定义id
   _id: string
 
