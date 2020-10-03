@@ -35,7 +35,7 @@ export class CommonException extends HttpException {
 
   constructor({code, message }:ErrBody) {
     super(
-      message,
+      { message },
       200
     );
     this.code = code;

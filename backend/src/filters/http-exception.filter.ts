@@ -19,10 +19,10 @@ export class HttpExceptionFilter implements ExceptionFilter {
         ? exception.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
 
-    const message = exception.getResponse();
-    const code = exception.code;
+    const { message } : any = exception.getResponse();
+    const code = exception.code ? exception.code : 1;
     
-    Logger.log('错误提示', message.toString());
+    Logger.log('错误提示', message);
     const errorResponse = {
       status: status,
       data: null,
