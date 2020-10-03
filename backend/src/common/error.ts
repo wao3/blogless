@@ -65,7 +65,7 @@ export class RecordExistException extends CommonException {
 export class RecordNotExistException extends CommonException {
   constructor(msg?: string) {
     super({
-        code: 'RECORD_EXIST',
+        code: 'RECORD_NOT_EXIST',
         message: msg || '记录不存在',
       }
     )

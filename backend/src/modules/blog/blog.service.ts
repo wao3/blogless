@@ -37,7 +37,6 @@ export class BlogService {
 
   async getOne(id: string) {
     const { data: blog } = await this.collection.doc(id).get();
-    console.debug(blog);
 
     if(!blog.length) {
       throw new RecordNotExistException();

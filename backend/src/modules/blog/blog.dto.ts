@@ -22,7 +22,7 @@ export class BlogDTO{
   articleType: 'blog' | 'draft' | 'page'
 
   @IsBoolean()
-  visible: boolean
+  isVisible: boolean
 
   @IsIn([true, false, 'default'])
   enableComment: boolean | 'default'
