@@ -10,7 +10,6 @@ import {
   Query,
   Delete,
   Patch, 
-  ParseBoolPipe,
   UseGuards,
 } from '@nestjs/common';
 import { CommentDTO } from './comment.dto';
