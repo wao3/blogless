@@ -1,7 +1,7 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'blogless-frontend',
+    title: 'blogless',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -33,7 +33,12 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/axios'
   ],
+
+  axios: {
+    // proxyHeaders: false
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
